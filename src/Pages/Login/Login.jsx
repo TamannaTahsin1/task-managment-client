@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
+import animation from './signIn.json'
 
 const Login = () => {
     return (
@@ -59,8 +60,8 @@ const Login = () => {
             
             </form>
           </div>
-          <div className="w-72 lg:w-[700px]">
-          {/* <Lottie loop={true} animationData={animation}></Lottie> */}
+          <div className="w-72 lg:w-[500px]">
+          <Lottie loop={true} animationData={animation}></Lottie>
           </div>
         </div>
         </div>
