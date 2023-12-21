@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -42,12 +43,16 @@ const Banner = () => {
                   collaboration, set deadlines, and achieve your goals <br />
                   seamlessly in a user-friendly digital workspace.
                 </p>
-                <button className="btn bg-red-700 text-white border-none px-8">
-                  Explore More{" "}
+                <div>
+              <Link to='/dashboard/newTask'>
+            <button className="btn bg-red-700 text-white border-none px-8">
+                  Explore More
                   <span className="text-2xl">
                     <RiArrowRightDoubleLine />
                   </span>
                 </button>
+                </Link>
+            </div>
               </div>
             </div>
           </div>
@@ -66,12 +71,16 @@ const Banner = () => {
                   collaboration, set deadlines, and achieve your goals <br />
                   seamlessly in a user-friendly digital workspace.
                 </p>
-                <button className="btn bg-red-700 text-white border-none px-8">
-                  Explore More{" "}
+                <div>
+              <Link to='/dashboard/newTask'>
+            <button className="btn bg-red-700 text-white border-none px-8">
+                  Explore More
                   <span className="text-2xl">
                     <RiArrowRightDoubleLine />
                   </span>
                 </button>
+                </Link>
+            </div>
               </div>
             </div>
           </div></SwiperSlide>
@@ -89,12 +98,16 @@ const Banner = () => {
                   collaboration, set deadlines, and achieve your goals <br />
                   seamlessly in a user-friendly digital workspace.
                 </p>
-                <button className="btn bg-red-700 text-white border-none px-8">
+            <div>
+              <Link to='/dashboard/newTask'>
+            <button className="btn bg-red-700 text-white border-none px-8">
                   Explore More
                   <span className="text-2xl">
                     <RiArrowRightDoubleLine />
                   </span>
                 </button>
+                </Link>
+            </div>
               </div>
             </div>
           </div></SwiperSlide>
@@ -112,12 +125,16 @@ const Banner = () => {
                   collaboration, set deadlines, and achieve your goals <br />
                   seamlessly in a user-friendly digital workspace.
                 </p>
-                <button className="btn bg-red-700 text-white border-none px-8">
+                <div>
+              <Link to='/dashboard/newTask'>
+            <button className="btn bg-red-700 text-white border-none px-8">
                   Explore More
                   <span className="text-2xl">
                     <RiArrowRightDoubleLine />
                   </span>
                 </button>
+                </Link>
+            </div>
               </div>
             </div>
           </div></SwiperSlide>
@@ -135,12 +152,16 @@ const Banner = () => {
                   collaboration, set deadlines, and achieve your goals <br />
                   seamlessly in a user-friendly digital workspace.
                 </p>
-                <button className="btn bg-red-700 text-white border-none px-8">
+                <div>
+              <Link to='/dashboard/newTask'>
+            <button className="btn bg-red-700 text-white border-none px-8">
                   Explore More
                   <span className="text-2xl">
                     <RiArrowRightDoubleLine />
                   </span>
                 </button>
+                </Link>
+            </div>
               </div>
             </div>
           </div></SwiperSlide>
