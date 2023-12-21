@@ -10,7 +10,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-white font-bold bg-red-500"
+              ? "text-white font-bold bg-red-700"
               : ""
           }
         >
@@ -24,7 +24,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-white font-bold bg-red-500"
+              ? "text-white font-bold bg-red-700"
               : ""
           }
         >
@@ -38,7 +38,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-white font-bold bg-red-500"
+              ? "text-white font-bold bg-red-700"
               : ""
           }
         >
@@ -52,7 +52,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-white font-bold bg-red-500"
+              ? "text-white font-bold bg-red-700"
               : ""
           }
         >
@@ -66,7 +66,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-white font-bold bg-red-500"
+              ? "text-white font-bold bg-red-700"
               : ""
           }
         >
@@ -105,7 +105,7 @@ const Navbar = () => {
         <div>
               <img src={logo} alt='' className='w-20 h-16' />
             </div>
-            <a className='btn btn-ghost normal-case text-2xl font-extrabold bg-gradient-to-r from-orange-500 via-red-500 to-gray-500 text-transparent bg-clip-text'>
+            <a className='btn btn-ghost normal-case text-2xl font-extrabold bg-gradient-to-r  from-red-600 via-orange-400  to-red-600 text-transparent bg-clip-text'>
               Taskify
             </a>
       </div>
@@ -114,7 +114,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <Link to={'/login'}>
-        <button className="bg-red-500 btn text-white">Login</button>
+        <button className="bg-red-700 btn text-white">Login</button>
         </Link>
       </div>
     </div>
