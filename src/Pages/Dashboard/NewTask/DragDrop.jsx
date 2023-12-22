@@ -12,28 +12,31 @@ const DragDrop = () => {
 
     // !using tanStack query
     const { data: tasks = [], refetch } = useQuery({
+       
         queryKey: ['tasks'],
         queryFn: async () => {
-            const res = await axios.get(`/tasks?email=${user.email}`);
+            const res = await axios.get(`/tasks`);
             return res.data;
         }
     });
+    console.log(tasks);
     // !filter all tasks
     const todoTasks = tasks.filter(task => task.status === 'todo');
     const ongoingTasks = tasks.filter(task => task.status === 'ongoing');
     const completedTasks = tasks.filter(task => task.status === 'completed');
+    console.log(todoTasks);
 
     //! drag and drop
-    const [{ isFinish }, dropOngoingTask] = useDrop(() => ({
+    const [{ isOver: isFinish }, dropOngoingTask] = useDrop(() => ({
         accept: "div",
-        drop: (task) => handleDropOngoing(task._id, 'ongoing'),
+        drop: (task) => handleDropOngoing(task.id, 'ongoing'),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
         }),
     }));
     const [{ isOver }, dropCompletedTask] = useDrop(() => ({
         accept: "div",
-        drop: (task) => handleDropOngoing(task._id, 'ongoing'),
+        drop: (task) => handleDropOngoing(task.id, 'ongoing'),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
         }),

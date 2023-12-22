@@ -20,7 +20,7 @@ const NewTaskCard = ({task}) => {
     // !drag and drop tasks
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "div",
-        item: { id: _id },
+        item: { id: task._id },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging(),
         }),
