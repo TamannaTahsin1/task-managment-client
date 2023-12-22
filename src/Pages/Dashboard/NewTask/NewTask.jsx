@@ -1,22 +1,27 @@
-import { useLoaderData } from "react-router-dom";
-import NewTaskCard from "./NewTaskCard";
+import useAuth from "../../../Hooks/useAuth";
+import useAxios from "../../../Hooks/useAxios";
 
 
 const NewTask = () => {
-    const tasks = useLoaderData();
+    const axios = useAxios()
+    const{user} = useAuth()
 
+    // !tanStack query
+    const {data:tasks}
     return (
-        <div className="max-w-[1200px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
-         <h2 className="text-white text-center text-6xl">New{tasks.length}</h2>
-         <div className="card w-96 bg-base-100 shadow-xl">
- 
-</div>
-<div>
-    {
-        tasks?.map(task =><NewTaskCard
-        key={task._id} task={task}></NewTaskCard>)
-    }
-</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-10">
+            <div className="col border-r border-black pr-4">
+                <h2 className="text-center font-bold text-2xl bg-red-700 p-3 rounded-lg text-white">To Do List</h2>
+                
+            </div>
+            <div className="col border-r border-black pr-4" >
+                <h2 className="text-center font-bold text-2xl bg-red-700 p-3 rounded-lg text-white">Ongoing Tasks</h2>
+               
+            </div>
+            <div className="col" >
+                <h2 className="text-center font-bold text-2xl bg-red-700 p-3 rounded-lg text-white">Completed Tasks</h2>
+               
+            </div>
         </div>
     );
 };

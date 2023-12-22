@@ -1,6 +1,9 @@
+
 import Swal from "sweetalert2";
+import useAxios from "../../../Hooks/useAxios";
 
 const CreateTask = () => {
+  const axios = useAxios()
   const handleTask = e =>{
     e.preventDefault()
     const form = e.target;
@@ -8,26 +11,18 @@ const CreateTask = () => {
     const description = form.description.value;
     const deadlines = form.deadlines.value;
     const priority = form.priority.value;
-
-    const createNewTask = {title, description, deadlines, priority}
+    const status = 'todo';
+    const createNewTask = {title, description, deadlines, priority,status}
     console.log(createNewTask);
     //! Send data to the server
-    fetch('http://localhost:5000/tasks',{
-      method: 'POST',
-      headers:{
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(createNewTask)
-    })
-    .then(res => res.json())
-    .then(data =>{
-      console.log(data);
-      if(data.insertedId){
-
+    axios.post('/tasks',createNewTask)
+    .then(res =>{
+      console.log(res.data);
+      if(res.data.insertedId){
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Your work has been added successfully",
+          title: "Your work has been saved",
           showConfirmButton: false,
           timer: 1500
         });

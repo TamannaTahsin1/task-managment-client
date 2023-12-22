@@ -20,7 +20,7 @@ const Navbar = () => {
       </li>
       <li className="font-bold">
         <NavLink
-          to="/"
+          to="/dashboard/createTask"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -29,12 +29,12 @@ const Navbar = () => {
               : ""
           }
         >
-        Task
+        Dashboard
         </NavLink>
       </li>
       <li className="font-bold">
         <NavLink
-          to="/"
+          to="/contact"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -43,21 +43,7 @@ const Navbar = () => {
               : ""
           }
         >
-          Task
-        </NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-white font-bold bg-red-700"
-              : ""
-          }
-        >
-         Task
+          Contact
         </NavLink>
       </li>
       <li className="font-bold">
