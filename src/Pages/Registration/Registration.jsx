@@ -14,13 +14,17 @@ const Registration = () => {
      const profession = form.profession.value;
      const password = form.password.value;
      console.log(name, email,photo, password, profession);
-
-     // !create user
+    //! validation
+    if(password.length < 6){
+      toast.error("The password must be 6 characters and one block letter and special character .")
+      return;
+    }
+     // !create new user
      createUser(email, password)
      .then(result =>{
       const user = result.user;
       console.log(user);
-      toast.success('Successfully toasted!',
+      toast.success('Successfully Registered!',
       {
         icon: '👏',
         style: {
@@ -106,8 +110,8 @@ const Registration = () => {
           </div>
           <p className='p-4'>
             Do not have an account?
-            <Link className='text-red-500 font-semibold ml-2' to='/login'>
-              Register
+            <Link className='text-red-700 font-semibold ml-2' to='/login'>
+              Login
             </Link>
           </p>
         </form>

@@ -7,6 +7,7 @@ import DashBoard from "../Layout/DashBoard";
 import NewTask from "../Pages/Dashboard/NewTask/NewTask";
 import PreviousTask from "../Pages/Dashboard/PreviousTask/PreviousTask";
 import CreateTask from "../Pages/Dashboard/CreateTask/CreateTask";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element:<DashBoard></DashBoard>,
+    element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children:[
       {
         path: 'createTask',
@@ -37,7 +38,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'newTask',
-        element:<NewTask></NewTask>
+        element:<NewTask></NewTask>,
+        loader: () => fetch('http://localhost:5000/tasks')
       },
       {
         path: 'previousTask',

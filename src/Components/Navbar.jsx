@@ -1,5 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/img/logo.png'
+import MenuDropDown from "./MenuDropDown";
 const Navbar = () => {
   const navLinks = (
     <>
@@ -61,7 +62,7 @@ const Navbar = () => {
       </li>
       <li className="font-bold">
         <NavLink
-          to="/"
+          to="/login"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -70,7 +71,7 @@ const Navbar = () => {
               : ""
           }
         >
-         Task
+         Login
         </NavLink>
       </li>
     </>
@@ -113,9 +114,10 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <Link to={'/login'}>
+        <MenuDropDown></MenuDropDown>
+        {/* <Link to={'/login'}>
         <button className="bg-red-700 btn text-white">Login</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const CreateTask = () => {

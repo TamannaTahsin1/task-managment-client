@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import animation from './signIn.json'
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
@@ -14,15 +15,17 @@ const Login = () => {
      const profession = form.profession.value;
      const password = form.password.value;
      console.log(email, password, profession);
-
-     // !create user
+   //! validation
+   if(password.length < 6){
+    toast.error("The password must be 6 characters and one block letter and special character .")
+    return;
+  }
+     //! login user
      logIn(email, password)
      .then(result =>{
       const user = result.user;
       console.log(user);
-      const loggerInUser = result.user
-      console.log(loggerInUser);
-      toast.success('Successfully toasted!',
+      toast.success('Successfully Login!',
       {
         icon: '👏',
         style: {
@@ -61,7 +64,7 @@ const Login = () => {
                 </label>
                 <input
                   name='profession'
-                  type='email'
+                  type='text'
                   placeholder='profession'
                   className='input input-bordered'
                   required
@@ -84,11 +87,11 @@ const Login = () => {
               </div>
               <p className='p-4'>
                 Do not have an account?
-                <Link className='text-red-500 font-semibold ml-2' to='/registration'>
+                <Link className='text-red-700 font-semibold ml-2' to='/registration'>
                   Register
                 </Link>
               </p>
-            
+            <SocialLogin></SocialLogin>
             </form>
           </div>
           <div className="w-72 lg:w-[500px]">
