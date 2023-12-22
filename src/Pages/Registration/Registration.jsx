@@ -20,8 +20,6 @@ const Registration = () => {
      .then(result =>{
       const user = result.user;
       console.log(user);
-      const loggerInUser = result.user
-      console.log(loggerInUser);
       toast.success('Successfully toasted!',
       {
         icon: '👏',
